@@ -13,6 +13,11 @@
 		BE82B1582AF701BD008BA2E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE82B1562AF701BD008BA2E4 /* Main.storyboard */; };
 		BE82B15A2AF701BE008BA2E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE82B1592AF701BE008BA2E4 /* Assets.xcassets */; };
 		BE82B15D2AF701BE008BA2E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE82B15B2AF701BE008BA2E4 /* LaunchScreen.storyboard */; };
+		BE82B1662AF7043C008BA2E4 /* ParseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BE82B1652AF7043C008BA2E4 /* ParseSwift */; };
+		BE82B1692AF70453008BA2E4 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = BE82B1682AF70453008BA2E4 /* Nuke */; };
+		BE82B16B2AF70453008BA2E4 /* NukeExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = BE82B16A2AF70453008BA2E4 /* NukeExtensions */; };
+		BE82B16D2AF70453008BA2E4 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = BE82B16C2AF70453008BA2E4 /* NukeUI */; };
+		BE82B16F2AF70453008BA2E4 /* NukeVideo in Frameworks */ = {isa = PBXBuildFile; productRef = BE82B16E2AF70453008BA2E4 /* NukeVideo */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE82B1662AF7043C008BA2E4 /* ParseSwift in Frameworks */,
+				BE82B1692AF70453008BA2E4 /* Nuke in Frameworks */,
+				BE82B16F2AF70453008BA2E4 /* NukeVideo in Frameworks */,
+				BE82B16B2AF70453008BA2E4 /* NukeExtensions in Frameworks */,
+				BE82B16D2AF70453008BA2E4 /* NukeUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +93,13 @@
 			dependencies = (
 			);
 			name = PLNR;
+			packageProductDependencies = (
+				BE82B1652AF7043C008BA2E4 /* ParseSwift */,
+				BE82B1682AF70453008BA2E4 /* Nuke */,
+				BE82B16A2AF70453008BA2E4 /* NukeExtensions */,
+				BE82B16C2AF70453008BA2E4 /* NukeUI */,
+				BE82B16E2AF70453008BA2E4 /* NukeVideo */,
+			);
 			productName = PLNR;
 			productReference = BE82B14D2AF701BD008BA2E4 /* PLNR.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +128,10 @@
 				Base,
 			);
 			mainGroup = BE82B1442AF701BD008BA2E4;
+			packageReferences = (
+				BE82B1642AF7043C008BA2E4 /* XCRemoteSwiftPackageReference "Parse-Swift" */,
+				BE82B1672AF70453008BA2E4 /* XCRemoteSwiftPackageReference "Nuke" */,
+			);
 			productRefGroup = BE82B14E2AF701BD008BA2E4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -356,6 +377,53 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BE82B1642AF7043C008BA2E4 /* XCRemoteSwiftPackageReference "Parse-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/parse-community/Parse-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		BE82B1672AF70453008BA2E4 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BE82B1652AF7043C008BA2E4 /* ParseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE82B1642AF7043C008BA2E4 /* XCRemoteSwiftPackageReference "Parse-Swift" */;
+			productName = ParseSwift;
+		};
+		BE82B1682AF70453008BA2E4 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE82B1672AF70453008BA2E4 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		BE82B16A2AF70453008BA2E4 /* NukeExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE82B1672AF70453008BA2E4 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeExtensions;
+		};
+		BE82B16C2AF70453008BA2E4 /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE82B1672AF70453008BA2E4 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
+		};
+		BE82B16E2AF70453008BA2E4 /* NukeVideo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE82B1672AF70453008BA2E4 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeVideo;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BE82B1452AF701BD008BA2E4 /* Project object */;
 }
