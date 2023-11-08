@@ -94,7 +94,7 @@ PLNR will also notify the user when a task is coming up, or when they have sched
 ## Wireframes
 
 [Wire Frame Picture]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="YOUR_WIREFRAME_IMAGE_URL" width=300>
 ![](https://hackmd.io/_uploads/B1AHGZLf6.jpg)
 
 ## Unit 8 Milestone 2 GIF
