@@ -73,17 +73,33 @@
 			isa = PBXGroup;
 			children = (
 				BE82B1502AF701BD008BA2E4 /* AppDelegate.swift */,
-				17C81FA52AF9AED200E4AFD0 /* User.swift */,
 				BE82B1562AF701BD008BA2E4 /* Main.storyboard */,
+				BEDCD3142AFB0EA000E18707 /* Models */,
+				BEDCD3162AFB0ECB00E18707 /* Login */,
 				BE82B1522AF701BD008BA2E4 /* SceneDelegate.swift */,
 				BE82B1542AF701BD008BA2E4 /* ViewController.swift */,
 				BE82B1592AF701BE008BA2E4 /* Assets.xcassets */,
 				BE82B15B2AF701BE008BA2E4 /* LaunchScreen.storyboard */,
 				BE82B15E2AF701BE008BA2E4 /* Info.plist */,
+			);
+			path = PLNR;
+			sourceTree = "<group>";
+		};
+		BEDCD3142AFB0EA000E18707 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				17C81FA52AF9AED200E4AFD0 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BEDCD3162AFB0ECB00E18707 /* Login */ = {
+			isa = PBXGroup;
+			children = (
 				17C81FAB2AF9B2C600E4AFD0 /* SignUpViewController.swift */,
 				17C81FAD2AF9B33900E4AFD0 /* LoginViewController.swift */,
 			);
-			path = PLNR;
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
