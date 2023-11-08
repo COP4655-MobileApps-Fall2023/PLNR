@@ -42,11 +42,14 @@
                         <viewLayoutGuide key="safeArea" id="632-l9-xSW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2Br-Yr-44h"/>
+                    <navigationItem key="navigationItem" title="PLNR" id="2Br-Yr-44h">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="ilN-O3-VBd"/>
+                        <barButtonItem key="rightBarButtonItem" title="New Task or something" id="anD-um-hcF"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7mT-WY-jjU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="25" y="679"/>
+            <point key="canvasLocation" x="2292" y="745"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="arD-4V-bsr">

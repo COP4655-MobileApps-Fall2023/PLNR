@@ -12,7 +12,6 @@ import ParseSwift
 
 
 class SignUpViewController: UIViewController {
-
     
     @IBOutlet weak var usernameField: UITextField!
     //@IBOutlet weak var usernameField: UITextField!
