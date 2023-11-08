@@ -33,24 +33,21 @@ class LoginViewController: UIViewController {
             showMissingFieldsAlert()
             return
         }
-
         
         User.login(username: username, password: password) { [weak self] result in
 
             switch result {
             case .success(let user):
                 print("✅ Successfully logged in as user: \(user)")
-                self?.performSegue(withIdentifier: "goToNext", sender: self)
 
-                
+                // Post a notification that the user has successfully logged in.
                 NotificationCenter.default.post(name: Notification.Name("login"), object: nil)
 
             case .failure(let error):
+                // Show an alert for any errors
                 self?.showAlert(description: error.localizedDescription)
             }
         }
-
-    
     }
     //@IBAction func onLoginTapped(_ sender: Any) {
 

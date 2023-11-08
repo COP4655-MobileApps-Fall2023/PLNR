@@ -3,15 +3,13 @@
 //  PLNR
 //
 //  Created by Will Reed on 11/4/23.
-//
+//  AppDelegate is good to go 11/7.
 
 import UIKit
 import ParseSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-//coimmentffff
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
