@@ -98,6 +98,7 @@ PLNR will also notify the user when a task is coming up, or when they have sched
 ![](https://hackmd.io/_uploads/B1AHGZLf6.jpg)
 
 ## Unit 8 Milestone 2 GIF
+![](https://github.com/COP4655-MobileApps-Fall2023/cop4655-mobile-apps-final-project-final-project-group-26/blob/main/Milestone%203%20Unit%208%20Demo.gif)
 
 ## Schema 
 
