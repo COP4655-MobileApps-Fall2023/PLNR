@@ -42,10 +42,10 @@ PLNR will also notify the user when a task is coming up, or when they have sched
 
 **Required Must-have Stories**
 
-[X] User can create a new account
-* User can login
-* User can logout
-* User can view a day of the week 
+- [X] User can create a new account
+- [X] User can login
+- [X] User can logout
+- [X] User can view a day of the week 
 * User can add tasks to a day of the week
 * User can schedule 'task time' on a day of the week
 * User can view the weekly overview in a separate tab
@@ -64,11 +64,11 @@ PLNR will also notify the user when a task is coming up, or when they have sched
 
 ### 2. Screen Archetypes
 
-- [ ] Login Screen
+- [X] Login Screen
    * User can login to their account
-- [ ] Sign-Up Screen
+- [X] Sign-Up Screen
    * User can create an account
-- [ ] Day Screen
+- [X] Day Screen
    * User can create tasks and task time on the selected day
 - [ ] Week Screen
    * User can view the days of the current week and select one to add tasks to
@@ -83,9 +83,9 @@ PLNR will also notify the user when a task is coming up, or when they have sched
 
 **Flow Navigation** (Screen to Screen)
 
-- [ ] Login Screen
+- [X] Login Screen
 => Week View
-- [ ] Login Screen
+- [X] Login Screen
 => Sign Up Screen
 - [ ] Week View
 => Day View
@@ -97,9 +97,7 @@ PLNR will also notify the user when a task is coming up, or when they have sched
 <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
 ![](https://hackmd.io/_uploads/B1AHGZLf6.jpg)
 
-### [BONUS] Digital Wireframes & Mockups
-
-### [BONUS] Interactive Prototype
+## Unit 8 Milestone 2 GIF
 
 ## Schema 
 
