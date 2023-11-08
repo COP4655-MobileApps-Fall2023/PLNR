@@ -8,6 +8,12 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    
+    private enum Constants {
+        static let loginNavigationControllerIdentifier = "LoginNavigationController"
+        static let feedNavigationControllerIdentifier = "FeedNavigationController"
+        static let storyboardIdentifier = "Main"
+    }
 
     var window: UIWindow?
 
