@@ -27,6 +27,7 @@ class SignUpViewController: UIViewController {
 
     @IBAction func onSignUpTapped(_ sender: Any) {
         
+        // Make sure all fields are non-nil and non-empty.
         guard let username = usernameField.text,
               let email = emailField.text,
               let password = passwordField.text,
@@ -36,10 +37,9 @@ class SignUpViewController: UIViewController {
 
             showMissingFieldsAlert()
             return
-            
         }
 
-        
+        // TODO: Pt 1 - Parse user sign up
         var newUser = User()
         newUser.username = username
         newUser.email = email
@@ -51,8 +51,8 @@ class SignUpViewController: UIViewController {
             case .success(let user):
 
                 print("✅ Successfully signed up user \(user)")
-                self?.performSegue(withIdentifier: "goToNext", sender: self)
-                
+
+                // Post a notification that the user has successfully signed up.
                 NotificationCenter.default.post(name: Notification.Name("login"), object: nil)
 
             case .failure(let error):
