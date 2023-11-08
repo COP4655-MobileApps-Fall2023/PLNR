@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="48" y="-2"/>
         </scene>
-        <!--PLNR-->
+        <!--Day View Controller-->
         <scene sceneID="fg1-mY-knM">
             <objects>
-                <viewController title="PLNR" id="M8m-6R-NFu" sceneMemberID="viewController">
+                <viewController title="PLNR" id="M8m-6R-NFu" userLabel="Day View Controller" customClass="DayViewController" customModule="PLNR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fdu-k4-myv">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,8 +42,12 @@
                         <viewLayoutGuide key="safeArea" id="632-l9-xSW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="PLNR" id="2Br-Yr-44h">
-                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="ilN-O3-VBd"/>
+                    <navigationItem key="navigationItem" title="Day View" id="2Br-Yr-44h" userLabel="Day View">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="ilN-O3-VBd">
+                            <connections>
+                                <action selector="onLogoutTapped:" destination="M8m-6R-NFu" id="6Ep-za-HGJ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="New Task or something" id="anD-um-hcF"/>
                     </navigationItem>
                 </viewController>
