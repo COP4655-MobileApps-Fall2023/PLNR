@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Day View Controller-->
+        <!--Week View Controller-->
         <scene sceneID="fg1-mY-knM">
             <objects>
-                <viewController title="PLNR" id="M8m-6R-NFu" userLabel="Day View Controller" customClass="DayViewController" customModule="PLNR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="PLNR" id="M8m-6R-NFu" userLabel="Week View Controller" customClass="WeekViewController" customModule="PLNR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fdu-k4-myv">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
                         <viewLayoutGuide key="safeArea" id="632-l9-xSW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Day View" id="2Br-Yr-44h" userLabel="Day View">
+                    <navigationItem key="navigationItem" title="Week View" id="2Br-Yr-44h" userLabel="Week View">
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="ilN-O3-VBd">
                             <connections>
                                 <action selector="onLogoutTapped:" destination="M8m-6R-NFu" id="6Ep-za-HGJ"/>

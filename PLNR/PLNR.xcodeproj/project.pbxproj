@@ -20,6 +20,7 @@
 		BE82B16B2AF70453008BA2E4 /* NukeExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = BE82B16A2AF70453008BA2E4 /* NukeExtensions */; };
 		BE82B16D2AF70453008BA2E4 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = BE82B16C2AF70453008BA2E4 /* NukeUI */; };
 		BE82B16F2AF70453008BA2E4 /* NukeVideo in Frameworks */ = {isa = PBXBuildFile; productRef = BE82B16E2AF70453008BA2E4 /* NukeVideo */; };
+		BE95952F2B0ABEE100AD8DB9 /* WeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE95952E2B0ABEE100AD8DB9 /* WeekViewController.swift */; };
 		BEDCD3192AFB136F00E18707 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDCD3182AFB136F00E18707 /* DayViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		BE82B1592AF701BE008BA2E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE82B15C2AF701BE008BA2E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE82B15E2AF701BE008BA2E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE95952E2B0ABEE100AD8DB9 /* WeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekViewController.swift; sourceTree = "<group>"; };
 		BEDCD3182AFB136F00E18707 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,11 +80,20 @@
 				BEDCD3142AFB0EA000E18707 /* Models */,
 				BEDCD3162AFB0ECB00E18707 /* Login */,
 				BEDCD3172AFB134D00E18707 /* Day View */,
+				BE95952D2B0ABEB400AD8DB9 /* Week View */,
 				BE82B15B2AF701BE008BA2E4 /* LaunchScreen.storyboard */,
 				BE82B1592AF701BE008BA2E4 /* Assets.xcassets */,
 				BE82B15E2AF701BE008BA2E4 /* Info.plist */,
 			);
 			path = PLNR;
+			sourceTree = "<group>";
+		};
+		BE95952D2B0ABEB400AD8DB9 /* Week View */ = {
+			isa = PBXGroup;
+			children = (
+				BE95952E2B0ABEE100AD8DB9 /* WeekViewController.swift */,
+			);
+			path = "Week View";
 			sourceTree = "<group>";
 		};
 		BEDCD3142AFB0EA000E18707 /* Models */ = {
@@ -192,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE95952F2B0ABEE100AD8DB9 /* WeekViewController.swift in Sources */,
 				17C81FAE2AF9B33900E4AFD0 /* LoginViewController.swift in Sources */,
 				17C81FAC2AF9B2C600E4AFD0 /* SignUpViewController.swift in Sources */,
 				17C81FA62AF9AED200E4AFD0 /* User.swift in Sources */,
