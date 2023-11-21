@@ -11,8 +11,35 @@ class WeekViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("\(self) - viewDidLoad")
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func dayButtonClicked(_ sender: UIButton){
+        
+        if let selectedDay = sender.titleLabel?.text{
+            performSegue(withIdentifier: "\(selectedDay)Segue", sender: selectedDay)
+        }
+        
+//        if let title = sender.titleLabel?.text {
+//            titleLabel.text = title
+//        }
+        
+//        guard let selectedDay = sender.titleLabel?.text else {
+//            return
+//        }
+//        titleLabel.text = selectedDay
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MondaySegue" || segue.identifier == "TuesdaySegue" || segue.identifier == "WednesdaySegue" || segue.identifier == "ThursdaySegue" || segue.identifier == "FridaySegue" || segue.identifier == "SaturdaySegue" || segue.identifier == "SundaySegue",
+           let destinationVC = segue.destination as? DayViewController,
+           let selectedDay = sender as? String {
+            destinationVC.selectedDay = selectedDay
+        
+        }
+        print("Preparing for ssegue: \(segue.identifier ?? "No Identifier")")
     }
     
     @IBAction func onLogoutTapped(_ sender: Any) {

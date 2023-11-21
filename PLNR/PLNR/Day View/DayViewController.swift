@@ -7,10 +7,20 @@
 
 import UIKit
 
+
+
 class DayViewController: UIViewController {
+    var selectedDay: String?
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("\(self) - viewDidLoad")
+        if let day = selectedDay {
+            titleLabel.text = "\(day)'s Schedule"
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -30,6 +40,7 @@ class DayViewController: UIViewController {
         present(alertController, animated: true)
     }
 }
+
 
     /*
     // MARK: - Navigation
