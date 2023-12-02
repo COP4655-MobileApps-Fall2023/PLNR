@@ -102,7 +102,11 @@ PLNR will also notify the user when a task is coming up, or when they have sched
 
 ## Schema 
 
-[This section will be completed in Unit 9]
+Unit 9 Demo Day Prep Recording:
+https://www.youtube.com/watch?v=bKkUnu5vF2Q&ab_channel=DylanHawryluk
+
+Unit 9 Milestone Gif:
+https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHNrMW1wYmR4MXJxM2RvMWh6dHkwamx0czVkMHgyMTFzbzlyc202YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6IDmNtQbMsl7a8Zk0B/giphy.gif
 
 ### Models
 
