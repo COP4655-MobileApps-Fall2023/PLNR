@@ -12,6 +12,7 @@
 		17C81FAE2AF9B33900E4AFD0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C81FAD2AF9B33900E4AFD0 /* LoginViewController.swift */; };
 		17C81FB02B0C25FB00E4AFD0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C81FAF2B0C25FB00E4AFD0 /* Task.swift */; };
 		17C81FB22B0C264600E4AFD0 /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C81FB12B0C264600E4AFD0 /* TaskManager.swift */; };
+		17C81FB62B1BCB0000E4AFD0 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C81FB52B1BCB0000E4AFD0 /* TaskViewController.swift */; };
 		BE82B1512AF701BD008BA2E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE82B1502AF701BD008BA2E4 /* AppDelegate.swift */; };
 		BE82B1532AF701BD008BA2E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE82B1522AF701BD008BA2E4 /* SceneDelegate.swift */; };
 		BE82B1582AF701BD008BA2E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE82B1562AF701BD008BA2E4 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		17C81FAD2AF9B33900E4AFD0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		17C81FAF2B0C25FB00E4AFD0 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Task.swift; path = PLNR/Task.swift; sourceTree = SOURCE_ROOT; };
 		17C81FB12B0C264600E4AFD0 /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
+		17C81FB52B1BCB0000E4AFD0 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		BE82B14D2AF701BD008BA2E4 /* PLNR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLNR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE82B1502AF701BD008BA2E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE82B1522AF701BD008BA2E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				BE95952E2B0ABEE100AD8DB9 /* WeekViewController.swift */,
 				17C81FAF2B0C25FB00E4AFD0 /* Task.swift */,
 				17C81FB12B0C264600E4AFD0 /* TaskManager.swift */,
+				17C81FB52B1BCB0000E4AFD0 /* TaskViewController.swift */,
 			);
 			path = "Week View";
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				17C81FAC2AF9B2C600E4AFD0 /* SignUpViewController.swift in Sources */,
 				17C81FA62AF9AED200E4AFD0 /* User.swift in Sources */,
 				BE82B1512AF701BD008BA2E4 /* AppDelegate.swift in Sources */,
+				17C81FB62B1BCB0000E4AFD0 /* TaskViewController.swift in Sources */,
 				BEDCD3192AFB136F00E18707 /* DayViewController.swift in Sources */,
 				BE82B1532AF701BD008BA2E4 /* SceneDelegate.swift in Sources */,
 			);

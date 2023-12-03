@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import UIKit
 
 struct Task {
-    var name: String
+    var title: String
     var description: String
-    var dayOfWeek: String
+    var dueDate: Date
 }
 
 

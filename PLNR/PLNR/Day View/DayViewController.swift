@@ -7,13 +7,26 @@
 
 import UIKit
 
-
+protocol DayViewControllerDelegate: AnyObject {
+    func didSelectDay(_ selectedDay: String?)
+}
 
 class DayViewController: UIViewController {
+    
+    
+    weak var delegate: DayViewControllerDelegate?
+    
+    
+    
     var selectedDay: String?
     @IBOutlet weak var titleLabel: UILabel!
     
+//    let weekViewController = WeekViewController()
+//    weekViewController.delegate = self
     
+    func didSelectedDay(_ selectedDay: String?) {
+        delegate?.didSelectDay(selectedDay)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

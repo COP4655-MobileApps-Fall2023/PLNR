@@ -3,16 +3,20 @@
 //  PLNR
 //
 //  Created by Will Reed on 11/19/23.
-//
+//TaskViewControllerDelegate
 
 import UIKit
+import Foundation
 
 class WeekViewController: UIViewController {
+    
+//    var selectedDay: String?
+//    var tasksByDay: [String: [Task]] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print("\(self) - viewDidLoad")
-        // Do any additional setup after loading the view.
+      
     }
     
     @IBAction func dayButtonClicked(_ sender: UIButton){
@@ -21,16 +25,34 @@ class WeekViewController: UIViewController {
             performSegue(withIdentifier: "\(selectedDay)Segue", sender: selectedDay)
         }
         
-//        if let title = sender.titleLabel?.text {
-//            titleLabel.text = title
-//        }
-        
-//        guard let selectedDay = sender.titleLabel?.text else {
-//            return
-//        }
-//        titleLabel.text = selectedDay
+      
         
     }
+    
+
+    
+    @IBAction func ribbonButtonTapped(_ sender: UIButton) {
+
+        performSegue(withIdentifier: "NewTaskSegue", sender: nil)
+
+    }
+//
+//
+//    func didSelectDay(_ selectedDay: String?) {
+//
+//    }
+//
+//    func didCreateTask(_ task: Task) {
+//        tasksByDay[selectedDay!, default: []].append(task)
+//        //tableView.reloadData()
+//        guard selectedDay != nil else {
+//            print("Error: selectedDay is nil")
+//            return
+//        }
+//
+//    }
+
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MondaySegue" || segue.identifier == "TuesdaySegue" || segue.identifier == "WednesdaySegue" || segue.identifier == "ThursdaySegue" || segue.identifier == "FridaySegue" || segue.identifier == "SaturdaySegue" || segue.identifier == "SundaySegue",
