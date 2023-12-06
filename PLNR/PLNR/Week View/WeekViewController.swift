@@ -111,10 +111,15 @@ class WeekViewController: UIViewController, UITableViewDataSource {
     
     private func queryTasks(completion: (() -> Void)? = nil) {
         let calendar = Calendar.current
-        let startOfWeek = calendar.date(from: calendar.dateComponents([.year, .month, .day], from: Date()))!
-        let endOfWeek = calendar.date(byAdding: .day, value: 7, to: startOfWeek)!
+        var startOfWeek = calendar.date(from: calendar.dateComponents([.year, .month, .day], from: Date()))!
         
-        let currentUser = User.current!
+        let df = DateFormatter()
+        df.dateFormat = "EEEE"
+        let dayIndex = daysOfTheWeek.firstIndex(of: df.string(from: Date()))!
+        
+        startOfWeek = calendar.date(byAdding: .day, value: -dayIndex, to: startOfWeek)!
+        let endOfWeek = calendar.date(byAdding: .day, value: 7 - dayIndex, to: startOfWeek)!
+        
         
         let query = Task.query()
             .where("createdBy" == User.current!.username!)
@@ -127,6 +132,7 @@ class WeekViewController: UIViewController, UITableViewDataSource {
             case .success(let tasks):
                 // Update the local posts property with fetched posts
                 self?.tasks = tasks
+                print(tasks)
             case .failure(let error):
                 print(error.localizedDescription)
             }
