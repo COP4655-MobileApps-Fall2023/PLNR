@@ -70,7 +70,7 @@ PLNR will also notify the user when a task is coming up, or when they have sched
    * User can create an account
 - [X] Day Screen
    * User can create tasks and task time on the selected day
-- [ ] Week Screen
+- [X] Week Screen
    * User can view the days of the current week and select one to add tasks to
 
 
