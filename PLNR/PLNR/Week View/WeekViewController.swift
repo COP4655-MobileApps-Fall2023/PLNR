@@ -14,12 +14,7 @@ class WeekViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
     let daysOfTheWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-    var tasks : [Task] = [Task]() {
-        didSet {
-            // Reload table view data any time the posts variable gets updated.
-            if tableView != nil { tableView.reloadData() }
-        }
-    }
+    var tasks : [Task] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return daysOfTheWeek.count

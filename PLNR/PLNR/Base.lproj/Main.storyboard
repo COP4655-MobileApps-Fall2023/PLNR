@@ -22,24 +22,24 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DayTableViewCell" id="Tdl-og-Iiv" customClass="DayTableViewCell" customModule="PLNR" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="369" height="60.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="50" width="369" height="100.33333587646484"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tdl-og-Iiv" id="hRp-1P-azB">
-                                            <rect key="frame" x="0.0" y="0.0" width="369" height="60.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="369" height="100.33333587646484"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WpA-Oc-z6a">
-                                                    <rect key="frame" x="0.0" y="0.0" width="369" height="60.333333333333336"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="369" height="100.33333333333333"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DayName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUn-FM-8pz">
-                                                            <rect key="frame" x="0.0" y="0.0" width="369" height="60.333333333333336"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="369" height="100.33333333333333"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="vI1-fX-paF"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Ved-c9-Xhx"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
@@ -391,36 +391,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OdW-NR-cH6">
-                                <rect key="frame" x="86" y="181" width="221" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DaJ-7l-Y5F">
-                                <rect key="frame" x="86" y="252" width="221" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruv-SM-vbN">
-                                <rect key="frame" x="155" y="426" width="84" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Sign Up"/>
-                                <connections>
-                                    <action selector="onSignUpTapped:" destination="GZA-pr-GA3" eventType="touchUpInside" id="Atb-zc-dQH"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MDr-9B-uuv">
-                                <rect key="frame" x="86" y="317" width="221" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="iUr-g6-3uN">
+                                <rect key="frame" x="100" y="203" width="193" height="515"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OdW-NR-cH6">
+                                        <rect key="frame" x="0.0" y="0.0" width="193" height="53.666666666666664"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DaJ-7l-Y5F">
+                                        <rect key="frame" x="0.0" y="153.66666666666669" width="193" height="54"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MDr-9B-uuv">
+                                        <rect key="frame" x="0.0" y="307.66666666666669" width="193" height="53.666666666666686"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruv-SM-vbN">
+                                        <rect key="frame" x="0.0" y="461.33333333333337" width="193" height="53.666666666666629"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Sign Up"/>
+                                        <connections>
+                                            <action selector="onSignUpTapped:" destination="GZA-pr-GA3" eventType="touchUpInside" id="Atb-zc-dQH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IWN-ZI-XQn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IWN-ZI-XQn" firstAttribute="trailing" secondItem="iUr-g6-3uN" secondAttribute="trailing" constant="100" id="2Vr-RH-iTZ"/>
+                            <constraint firstItem="iUr-g6-3uN" firstAttribute="top" secondItem="IWN-ZI-XQn" secondAttribute="top" constant="100" id="ESx-Lt-JvJ"/>
+                            <constraint firstItem="iUr-g6-3uN" firstAttribute="leading" secondItem="IWN-ZI-XQn" secondAttribute="leading" constant="100" id="bwO-sB-HYr"/>
+                            <constraint firstItem="IWN-ZI-XQn" firstAttribute="bottom" secondItem="iUr-g6-3uN" secondAttribute="bottom" constant="100" id="dra-qG-d2n"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MFm-Lr-RsA"/>
                     <connections>
