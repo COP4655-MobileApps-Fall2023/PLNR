@@ -8,7 +8,25 @@
 import UIKit
 import Foundation
 
-class WeekViewController: UIViewController {
+class WeekViewController: UIViewController, UITableViewDataSource {
+    @IBOutlet weak var tableView: UITableView!
+    
+    let daysOfTheWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return daysOfTheWeek.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DayTableViewCell", for: indexPath) as! DayTableViewCell
+        
+        cell.dayLabel.text = daysOfTheWeek[indexPath.row]
+        
+        print("Made cell for " + daysOfTheWeek[indexPath.row])
+        
+        return cell
+    }
+    
     
 //    var selectedDay: String?
 //    var tasksByDay: [String: [Task]] = [:]
@@ -16,17 +34,22 @@ class WeekViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("\(self) - viewDidLoad")
+        
+        tableView.dataSource = self
       
     }
     
-    @IBAction func dayButtonClicked(_ sender: UIButton){
-        
-        if let selectedDay = sender.titleLabel?.text{
-            performSegue(withIdentifier: "\(selectedDay)Segue", sender: selectedDay)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // TODO: Deselect any selected table view rows
+
+        // Get the index path for the current selected table view row (if exists)
+        if let indexPath = tableView.indexPathForSelectedRow {
+
+            // Deslect the row at the corresponding index path
+            tableView.deselectRow(at: indexPath, animated: true)
         }
-        
-      
-        
     }
     
 
@@ -52,16 +75,16 @@ class WeekViewController: UIViewController {
 //
 //    }
 
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "MondaySegue" || segue.identifier == "TuesdaySegue" || segue.identifier == "WednesdaySegue" || segue.identifier == "ThursdaySegue" || segue.identifier == "FridaySegue" || segue.identifier == "SaturdaySegue" || segue.identifier == "SundaySegue",
-           let destinationVC = segue.destination as? DayViewController,
-           let selectedDay = sender as? String {
-            destinationVC.selectedDay = selectedDay
-        
+        if let cell = sender as? UITableViewCell,
+           // Get the index path of the cell from the table view
+           let indexPath = tableView.indexPath(for: cell),
+           let dayViewController = segue.destination as? DayViewController {
+
+            // Set the track on the detail view controller
+            dayViewController.configure(dayIndex: indexPath.row)
         }
-        print("Preparing for ssegue: \(segue.identifier ?? "No Identifier")")
     }
     
     @IBAction func onLogoutTapped(_ sender: Any) {

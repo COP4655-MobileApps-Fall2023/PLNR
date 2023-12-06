@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yA0-9K-O1I">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yA0-9K-O1I">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,80 +17,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Bio-ej-mw9">
-                                <rect key="frame" x="140" y="156" width="113.33333333333331" height="540.33333333333337"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKI-vr-vdN">
-                                        <rect key="frame" x="0.0" y="0.0" width="113.33333333333333" height="34.333333333333336"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" title="Sunday"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HLe-6g-1oM">
+                                <rect key="frame" x="12" y="115" width="369" height="691"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DayTableViewCell" id="Tdl-og-Iiv" customClass="DayTableViewCell" customModule="PLNR" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="369" height="60.333332061767578"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tdl-og-Iiv" id="hRp-1P-azB">
+                                            <rect key="frame" x="0.0" y="0.0" width="369" height="60.333332061767578"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WpA-Oc-z6a">
+                                                    <rect key="frame" x="0.0" y="0.0" width="369" height="60.333333333333336"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DayName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUn-FM-8pz">
+                                                            <rect key="frame" x="0.0" y="0.0" width="369" height="60.333333333333336"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="vI1-fX-paF"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="WpA-Oc-z6a" firstAttribute="leading" secondItem="hRp-1P-azB" secondAttribute="leading" id="CX4-CY-eEn"/>
+                                                <constraint firstItem="WpA-Oc-z6a" firstAttribute="top" secondItem="hRp-1P-azB" secondAttribute="top" id="HfZ-0f-Q3W"/>
+                                                <constraint firstItem="WpA-Oc-z6a" firstAttribute="top" secondItem="hRp-1P-azB" secondAttribute="top" id="LaS-6P-Pe4"/>
+                                                <constraint firstItem="WpA-Oc-z6a" firstAttribute="leading" secondItem="hRp-1P-azB" secondAttribute="leading" id="Lyo-jE-HLB"/>
+                                                <constraint firstAttribute="trailing" secondItem="WpA-Oc-z6a" secondAttribute="trailing" id="Uo4-Pz-5QD"/>
+                                                <constraint firstAttribute="bottom" secondItem="WpA-Oc-z6a" secondAttribute="bottom" id="lQh-8H-a3i"/>
+                                                <constraint firstAttribute="trailing" secondItem="WpA-Oc-z6a" secondAttribute="trailing" id="nn7-TN-AJo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
                                         <connections>
-                                            <action selector="dayButtonClicked:" destination="M8m-6R-NFu" eventType="touchUpInside" id="JKB-pt-74u"/>
-                                            <segue destination="wTB-kx-cgo" kind="show" identifier="SundaySegue" id="BUh-sV-tSI"/>
+                                            <outlet property="dayLabel" destination="jUn-FM-8pz" id="oNM-9Q-vko"/>
+                                            <segue destination="wTB-kx-cgo" kind="show" id="InL-hc-IJX"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdV-y9-emk">
-                                        <rect key="frame" x="0.0" y="84.333333333333343" width="113.33333333333333" height="34.333333333333343"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" title="Monday"/>
-                                        <connections>
-                                            <action selector="dayButtonClicked:" destination="M8m-6R-NFu" eventType="touchUpInside" id="1pi-m6-1kr"/>
-                                            <segue destination="wTB-kx-cgo" kind="show" identifier="MondaySegue" id="mxY-QR-I87"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lck-1E-F0Z">
-                                        <rect key="frame" x="0.0" y="168.66666666666669" width="113.33333333333333" height="34.333333333333343"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" title="Tuesday"/>
-                                        <connections>
-                                            <action selector="dayButtonClicked:" destination="M8m-6R-NFu" eventType="touchUpInside" id="o3G-6y-6sr"/>
-                                            <segue destination="wTB-kx-cgo" kind="show" identifier="TuesdaySegue" id="ZdW-Cn-Jtc"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvW-aF-UAH">
-                                        <rect key="frame" x="0.0" y="253.00000000000003" width="113.33333333333333" height="34.333333333333343"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" title="Wednesday"/>
-                                        <connections>
-                                            <action selector="dayButtonClicked:" destination="M8m-6R-NFu" eventType="touchUpInside" id="m6n-ta-Ozl"/>
-                                            <segue destination="wTB-kx-cgo" kind="show" identifier="WednesdaySegue" id="QBE-Fu-tF7"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqQ-vA-jLc">
-                                        <rect key="frame" x="0.0" y="337.33333333333331" width="113.33333333333333" height="34.333333333333314"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" title="Thursday"/>
-                                        <connections>
-                                            <action selector="dayButtonClicked:" destination="M8m-6R-NFu" eventType="touchUpInside" id="Ohr-nU-0My"/>
-                                            <segue destination="wTB-kx-cgo" kind="show" identifier="ThursdaySegue" id="Oue-AU-KH2"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6AG-l1-Uww">
-                                        <rect key="frame" x="0.0" y="421.66666666666663" width="113.33333333333333" height="34.333333333333314"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" title="Friday"/>
-                                        <connections>
-                                            <action selector="dayButtonClicked:" destination="M8m-6R-NFu" eventType="touchUpInside" id="z2E-nC-fLf"/>
-                                            <segue destination="wTB-kx-cgo" kind="show" identifier="FridaySegue" id="Oap-sg-M9v"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="luZ-cm-vvh">
-                                        <rect key="frame" x="0.0" y="505.99999999999994" width="113.33333333333333" height="34.333333333333314"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" title="Saturday"/>
-                                        <connections>
-                                            <action selector="dayButtonClicked:" destination="M8m-6R-NFu" eventType="touchUpInside" id="acq-ZR-9rL"/>
-                                            <segue destination="wTB-kx-cgo" kind="show" identifier="SaturdaySegue" id="tRq-yc-MYZ"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="632-l9-xSW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Bio-ej-mw9" firstAttribute="centerY" secondItem="fdu-k4-myv" secondAttribute="centerY" id="U3w-Si-X6Y"/>
-                            <constraint firstItem="Bio-ej-mw9" firstAttribute="centerX" secondItem="fdu-k4-myv" secondAttribute="centerX" id="iWI-Nq-YuY"/>
+                            <constraint firstItem="632-l9-xSW" firstAttribute="trailing" secondItem="HLe-6g-1oM" secondAttribute="trailing" constant="12" id="Cjt-pG-mrO"/>
+                            <constraint firstItem="HLe-6g-1oM" firstAttribute="leading" secondItem="632-l9-xSW" secondAttribute="leading" constant="12" id="DnI-Jy-zBF"/>
+                            <constraint firstItem="632-l9-xSW" firstAttribute="bottom" secondItem="HLe-6g-1oM" secondAttribute="bottom" constant="12" id="ghO-y1-C67"/>
+                            <constraint firstItem="HLe-6g-1oM" firstAttribute="top" secondItem="632-l9-xSW" secondAttribute="top" constant="12" id="nvl-1R-Oru"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Week View" id="2Br-Yr-44h" userLabel="Week View">
@@ -105,6 +83,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="HLe-6g-1oM" id="cv4-e4-f8O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7mT-WY-jjU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -372,9 +353,6 @@
             <point key="canvasLocation" x="920" y="744"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="BUh-sV-tSI"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

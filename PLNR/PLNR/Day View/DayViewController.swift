@@ -52,6 +52,10 @@ class DayViewController: UIViewController {
         alertController.addAction(cancelAction)
         present(alertController, animated: true)
     }
+    
+    func configure(dayIndex : Int) {
+        print("Received day " + String(dayIndex))
+    }
 }
 
 
