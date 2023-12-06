@@ -110,7 +110,7 @@ https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHNrMW1wYmR4MXJxM2RvMWh6dHkwamx
 
 
 Unit 10 Milestone Video:
-![](https://github.com/COP4655-MobileApps-Fall2023/cop4655-mobile-apps-final-project-group-26/blob/618914d8fc3a41e29a204df3dd27bc001ef54949/6AD4FAF9-0CA0-4460-A36B-FB58655EDA37.mov)
+
 [![Link to YouTube video.](http://img.youtube.com/vi/oZm5kLYrJ5w/0.jpg)](https://www.youtube.com/embed/oZm5kLYrJ5w)
 ### Models
 
