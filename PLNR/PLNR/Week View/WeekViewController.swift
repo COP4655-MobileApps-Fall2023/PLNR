@@ -114,8 +114,10 @@ class WeekViewController: UIViewController, UITableViewDataSource {
         let startOfWeek = calendar.date(from: calendar.dateComponents([.year, .month, .day], from: Date()))!
         let endOfWeek = calendar.date(byAdding: .day, value: 7, to: startOfWeek)!
         
+        let currentUser = User.current!
+        
         let query = Task.query()
-            .where("createdBy" == User.current?.objectId!)
+            .where("createdBy" == User.current!.username!)
             .where("dueDate" <= endOfWeek)
             .where("dueDate" >= startOfWeek)
         
