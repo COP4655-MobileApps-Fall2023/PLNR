@@ -14,14 +14,16 @@ class NewTaskViewController: UIViewController {
     
     @IBAction func onTaskTitleEdit(_ sender: UITextField) {
         taskTitle = sender.text ?? ""
+        print(taskTitle)
         
-        completeButton.isEnabled = taskTitle != ""
+        completeButton.isEnabled = taskTitle != "" && taskDescription != ""
     }
     
     @IBAction func onTaskDescriptionEdit(_ sender: UITextField) {
         taskDescription = sender.text ?? ""
+        print(taskDescription)
         
-        completeButton.isEnabled = taskDescription != ""
+        completeButton.isEnabled = taskTitle != "" && taskDescription != ""
     }
     
     @IBAction func onTaskDateEdit(_ sender: UIDatePicker) {

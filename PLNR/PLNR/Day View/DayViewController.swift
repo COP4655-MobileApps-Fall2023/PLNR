@@ -60,21 +60,7 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         // Do any additional setup after loading the view.
         titleLabel.text = formatDate(dayDate)
     }
-    
-    /*@IBAction func onLogoutTapped(_ sender: Any) {
-        showConfirmLogoutAlert()
-    }*/
-    
-    private func showConfirmLogoutAlert() {
-        let alertController = UIAlertController(title: "Log out of \(User.current?.username ?? "current account")?", message: nil, preferredStyle: .alert)
-        let logOutAction = UIAlertAction(title: "Log out", style: .destructive) { _ in
-            NotificationCenter.default.post(name: Notification.Name("logout"), object: nil)
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        alertController.addAction(logOutAction)
-        alertController.addAction(cancelAction)
-        present(alertController, animated: true)
-    }
+
     
     func configure(dayDate: Date, tasks: [Task]) {
         print("Received " + String(tasks.count) + " tasks.")
@@ -117,7 +103,7 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     private func showConfirmCompleteAlert(taskIndex: Int) {
         let alertController = UIAlertController(title: "Complete " + tasks[taskIndex].title! + "?", message: nil, preferredStyle: .alert)
-        let logOutAction = UIAlertAction(title: "Complete!", style: .default) { _ in
+        let completeAction = UIAlertAction(title: "Complete!", style: .default) { _ in
             let task = self.tasks[taskIndex]
             
             self.tasks.remove(at: taskIndex)
@@ -132,7 +118,7 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             }
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        alertController.addAction(logOutAction)
+        alertController.addAction(completeAction)
         alertController.addAction(cancelAction)
         present(alertController, animated: true)
     }
