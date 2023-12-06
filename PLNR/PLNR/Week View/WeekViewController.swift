@@ -12,6 +12,7 @@ class WeekViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
     let daysOfTheWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    var tasks : [Task] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return daysOfTheWeek.count
@@ -21,8 +22,6 @@ class WeekViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DayTableViewCell", for: indexPath) as! DayTableViewCell
         
         cell.dayLabel.text = daysOfTheWeek[indexPath.row]
-        
-        print("Made cell for " + daysOfTheWeek[indexPath.row])
         
         return cell
     }
@@ -36,7 +35,8 @@ class WeekViewController: UIViewController, UITableViewDataSource {
         print("\(self) - viewDidLoad")
         
         tableView.dataSource = self
-      
+        
+        tasks = Task.sampleTasks
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,12 +78,29 @@ class WeekViewController: UIViewController, UITableViewDataSource {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cell = sender as? UITableViewCell,
-           // Get the index path of the cell from the table view
-           let indexPath = tableView.indexPath(for: cell),
-           let dayViewController = segue.destination as? DayViewController {
-
-            // Set the track on the detail view controller
-            dayViewController.configure(dayIndex: indexPath.row)
+            // Get the index path of the cell from the table view
+            let indexPath = tableView.indexPath(for: cell),
+            let dayViewController = segue.destination as? DayViewController {
+            
+            let calendar = Calendar.current
+            let startOfWeek = calendar.date(from: calendar.dateComponents([.year, .month, .day], from: Date()))!
+            
+            let df = DateFormatter()
+            df.dateFormat = "EEEE"
+            let dayIndex = daysOfTheWeek.firstIndex(of: df.string(from: Date()))!
+            
+            let startOfDay = calendar.date(byAdding: .day, value: indexPath.row - dayIndex, to: startOfWeek)!
+            let endOfDay = calendar.date(byAdding: .day, value: indexPath.row+1 - dayIndex, to: startOfWeek)!
+            
+            var dayTasks: [Task] = []
+            
+            
+            for task in tasks {
+                if startOfDay <= task.dueDate && task.dueDate < endOfDay {
+                    dayTasks.append(task)
+                }
+            }
+            dayViewController.configure(dayDate: startOfDay, tasks: dayTasks)
         }
     }
     
