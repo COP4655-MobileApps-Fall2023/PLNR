@@ -118,7 +118,7 @@ class WeekViewController: UIViewController, UITableViewDataSource {
         let dayIndex = daysOfTheWeek.firstIndex(of: df.string(from: Date()))!
         
         startOfWeek = calendar.date(byAdding: .day, value: -dayIndex, to: startOfWeek)!
-        let endOfWeek = calendar.date(byAdding: .day, value: 7 - dayIndex, to: startOfWeek)!
+        let endOfWeek = calendar.date(byAdding: .day, value: 7, to: startOfWeek)!
         
         
         let query = Task.query()
@@ -132,7 +132,6 @@ class WeekViewController: UIViewController, UITableViewDataSource {
             case .success(let tasks):
                 // Update the local posts property with fetched posts
                 self?.tasks = tasks
-                print(tasks)
             case .failure(let error):
                 print(error.localizedDescription)
             }
