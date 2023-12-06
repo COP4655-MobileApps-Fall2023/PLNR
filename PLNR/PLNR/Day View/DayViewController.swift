@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import ParseSwift
 
 protocol DayViewControllerDelegate: AnyObject {
     func didSelectDay(_ selectedDay: String?)
 }
 
-class DayViewController: UIViewController, UITableViewDataSource {
+class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count
     }
@@ -22,13 +23,22 @@ class DayViewController: UIViewController, UITableViewDataSource {
         let task = tasks[indexPath.row]
         
         cell.taskNameLabel.text = task.title
-        cell.taskTimeLabel.text = getTime(from: task.dueDate)
+        cell.taskTimeLabel.text = getTime(from: task.dueDate!)
         cell.taskDescription.text = task.description
         
         return cell
     }
     
-    var tasks: [Task] = []
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showConfirmCompleteAlert(taskIndex: indexPath.row)
+    }
+    
+    var tasks: [Task] = [Task]() {
+        didSet {
+            // Reload table view data any time the posts variable gets updated.
+            if tableView != nil { tableView.reloadData() }
+        }
+    }
     var dayDate: Date = Date()
     
     weak var delegate: DayViewControllerDelegate?
@@ -45,6 +55,7 @@ class DayViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
 
         tableView.dataSource = self
+        tableView.delegate = self
         
         // Do any additional setup after loading the view.
         titleLabel.text = formatDate(dayDate)
@@ -102,6 +113,28 @@ class DayViewController: UIViewController, UITableViewDataSource {
         
         let timeString = timeFormatter.string(from: date)
         return timeString
+    }
+    
+    private func showConfirmCompleteAlert(taskIndex: Int) {
+        let alertController = UIAlertController(title: "Complete " + tasks[taskIndex].title! + "?", message: nil, preferredStyle: .alert)
+        let logOutAction = UIAlertAction(title: "Complete!", style: .default) { _ in
+            let task = self.tasks[taskIndex]
+            
+            self.tasks.remove(at: taskIndex)
+            
+            task.delete { result in
+                switch result {
+                case .success:
+                    print("Object deleted successfully!")
+                case .failure(let error):
+                    print("Error deleting object: \(error)")
+                }
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alertController.addAction(logOutAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true)
     }
 }
 

@@ -7,12 +7,19 @@
 
 import UIKit
 import Foundation
+import SwiftUI
+import ParseSwift
 
 class WeekViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
     let daysOfTheWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-    var tasks : [Task] = []
+    var tasks : [Task] = [Task]() {
+        didSet {
+            // Reload table view data any time the posts variable gets updated.
+            if tableView != nil { tableView.reloadData() }
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return daysOfTheWeek.count
@@ -26,7 +33,6 @@ class WeekViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
-    
 //    var selectedDay: String?
 //    var tasksByDay: [String: [Task]] = [:]
 
@@ -36,7 +42,7 @@ class WeekViewController: UIViewController, UITableViewDataSource {
         
         tableView.dataSource = self
         
-        tasks = Task.sampleTasks
+        //tasks = Task.sampleTasks
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,31 +56,15 @@ class WeekViewController: UIViewController, UITableViewDataSource {
             // Deslect the row at the corresponding index path
             tableView.deselectRow(at: indexPath, animated: true)
         }
+        
+        queryTasks()
     }
-    
-
     
     @IBAction func ribbonButtonTapped(_ sender: UIButton) {
 
         performSegue(withIdentifier: "NewTaskSegue", sender: nil)
 
     }
-//
-//
-//    func didSelectDay(_ selectedDay: String?) {
-//
-//    }
-//
-//    func didCreateTask(_ task: Task) {
-//        tasksByDay[selectedDay!, default: []].append(task)
-//        //tableView.reloadData()
-//        guard selectedDay != nil else {
-//            print("Error: selectedDay is nil")
-//            return
-//        }
-//
-//    }
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cell = sender as? UITableViewCell,
@@ -96,7 +86,7 @@ class WeekViewController: UIViewController, UITableViewDataSource {
             
             
             for task in tasks {
-                if startOfDay <= task.dueDate && task.dueDate < endOfDay {
+                if startOfDay <= task.dueDate! && task.dueDate! < endOfDay {
                     dayTasks.append(task)
                 }
             }
@@ -117,5 +107,31 @@ class WeekViewController: UIViewController, UITableViewDataSource {
         alertController.addAction(logOutAction)
         alertController.addAction(cancelAction)
         present(alertController, animated: true)
+    }
+    
+    private func queryTasks(completion: (() -> Void)? = nil) {
+        let calendar = Calendar.current
+        let startOfWeek = calendar.date(from: calendar.dateComponents([.year, .month, .day], from: Date()))!
+        let endOfWeek = calendar.date(byAdding: .day, value: 7, to: startOfWeek)!
+        
+        let query = Task.query()
+            .where("createdBy" == User.current?.objectId!)
+            .where("dueDate" <= endOfWeek)
+            .where("dueDate" >= startOfWeek)
+        
+        // Find and return tasks that meet query criteria (async)
+        query.find { [weak self] result in
+            switch result {
+            case .success(let tasks):
+                // Update the local posts property with fetched posts
+                self?.tasks = tasks
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+
+            // Call the completion handler (regardless of error or success, this will signal the query finished)
+            // This is used to tell the pull-to-refresh control to stop refresshing
+            completion?()
+        }
     }
 }
